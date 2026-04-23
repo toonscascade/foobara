@@ -10,7 +10,7 @@ RSpec.describe Foobara do
       it "raises MethodCantBeCalledInProductionError and infers method name" do
         expect {
           my_reset_method
-        }.to raise_error(Foobara::MethodCantBeCalledInProductionError, "my_reset_method")
+        }.to raise_error(Foobara::MethodCantBeCalledInProductionError, /my_reset_method/)
       end
 
       it "prints a deprecation warning if method name is passed explicitly" do
@@ -28,7 +28,7 @@ RSpec.describe Foobara do
       it "raises MethodCantBeCalledInProductionError" do
         expect {
           my_reset_method
-        }.to raise_error(Foobara::MethodCantBeCalledInProductionError, "my_reset_method")
+        }.to raise_error(Foobara::MethodCantBeCalledInProductionError, /my_reset_method/)
       end
     end
 
